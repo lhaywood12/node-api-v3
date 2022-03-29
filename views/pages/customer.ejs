@@ -1,0 +1,24 @@
+<%- include('../partials/header'); %>
+
+<main class="main main-customer">
+    <section class="section section-customer">
+        <% data.forEach(item => { %>
+            <div class="item-div">
+                <a href="/customer/<%= item.customer_id %>">
+                <h2 class="item-header">
+                    <%= item.last_name %>, <%= item.first_name %>
+                </h2>
+                <img src="http://via.placeholder.com/250x300" alt="placeholder img" class="img-fluid customer-img">
+                </a>
+                <p class="email-text">Email: <% item.email %></p>
+                <% if(item.active == 1) { %>
+                    <p class="active-text">Active: Y</p>
+                    <% } else { %>
+                    <p class="active-text">Active: N</p>
+                <% } %>
+            </div>
+        <% }) %>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>

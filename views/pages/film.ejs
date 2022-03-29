@@ -1,0 +1,24 @@
+<%- include('../partials/header'); %>
+
+<main class="main main-film">
+    <section class="section section-film">
+        <% data.forEach(item => { %>
+            <div class="item-div">
+                <a href="/film/<%= item.film_id %>">
+                <h2 class="item-header">
+                    <%= title %>
+                </h2>
+                <img src="http://via.placeholder.com/250x300" alt="placeholder img" class="img-fluid customer-img">
+                </a>
+                <p class="film-text">Title: <% item.title %></p>
+                <% if(item.active == 1) { %>
+                    <p class="active-text">Active: Y</p>
+                    <% } else { %>
+                    <p class="active-text">Active: N</p>
+               <% } %>
+            </div>
+         <% }) %>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>
